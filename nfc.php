@@ -56,7 +56,7 @@ if((strpos($ans,$correct)!==false))
   	{
 		die('Error: ' . mysql_error());
   	}
-	header('Location:.'.($correct).'.php');	
+	header('Location:'.($correct).'.php');	
 		//The file name of the next level is the correct answer of this(current) level
 			/*In this case the name of the next file should be nfc.php since
 			  the corrcet answer of this level is "nfc"*/
