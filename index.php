@@ -1,70 +1,116 @@
-<? ob_start(); ?>
+<!--	Author: Arpith K
+				arpith.xyz
+		Source: https://github.com/arpith20/oth
+-->
+
 <?php
-$level=0;
-$name=$_POST['name'];
-$usn=$_POST['usn'];
-if($name!=NULL && $usn!=NULL)
+session_start();
+require_once("config.php");
+
+
+$usn=clean_nospace($_POST['usn']);		//unique serial 
+$password=$_POST['password'];			//email
+$valid_pass = 0;
+
+if($usn!=NULL && $password != null)
 {
-	/*$con = mysql_connect('localhost','root','root');
-	if (!$con)
-  	{
-  		die('Could not connect to database : ' . mysql_error());
-  	}
-	mysql_select_db("arp_oth", $con);*/
-	require_once("config.php");
-	$level=0;
-	setcookie("USN", $usn, time()+60*60*24*30);
-	setcookie("NAME", $name, time()+60*60*24*30);
-	$sql="INSERT INTO sheet (usn,name,level) VALUES('$usn','$name','$level')";
-	if (!mysql_query($sql,$con))
-	{
-		die('Error: ' . mysql_error());
+	$data=mysql_query("SELECT password FROM sheet where usn='$usn'") 
+			or die(mysql_error());
+	$info = mysql_fetch_array( $data );
+	if(password_verify($password, $info[password])){
+		$valid_pass = 1;
 	}
-	mysql_close($con);
-	header('location:start.php');
+	if ($valid_pass == 1)
+	{
+		session_start();
+		$_SESSION["USN"] = $usn;
+		$sql="update sheet set session='".session_id()."' where usn='$usn'";
+		if (!mysql_query($sql,$con))
+	  	{
+			die('Error: ' . mysql_error());
+	  	}
+		redirect('respawn.php');
+	}
 }
 ?>
 
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>QUEST FOR D NEXT</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/login.css" />
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+	</head>
+	<body class="is-loading">
 
+		<!-- Wrapper -->
+			<div id="wrapper">
 
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<img src="images/csa.png" alt="" height="81"/>
+							<hr/>
+							<h1>QUEST FOR D NEXT</h1>
+							<h2>Online Treasure Hunt</h2>
+							<p class="small">Ahoy, Mateys!<br/>
+							Welcome to the Online Treasure Hunt.<br/>
+							Play Sherlock Holmes on the expanse of the Internet!<br/>
+							Crawl the web to find secret troves of knowledge and unlock the next clue!</p>
+						</header>
+						<hr />
+						</footer>
+						<?
+							if($valid_pass == 0 && $password != null) {
+									echo "<p style=\"color:red;\">The username or password is incorrect";
+									echo "<hr />";
+							}
+						?>
+						<p class="small">LOGIN</p>
+						<form method="post" action="index.php">
+							<div class="field">
+								<input type="text" name="usn" placeholder="Username" maxlength="15"/>
+							</div>
+							<div class="field">
+								<input type="password" name="password" placeholder="Password" maxlength="40"/>
+							</div>
+							<input type="submit" value="Log in"> 
+						</form>
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li><a href="register.php" class="fa-sign-in" title="Register">Register</a></li>
+								<a href="register.php"><p>To Create an account, register.</p></a>
+							</ul>
+						</footer>
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li><a href="leaderboard.php" class="fa-child" title="Leaderboard" target="_blank">Leaderboard</a></li>
+								<li><a href="rules.php" class="fa-asterisk" title="Rules" target="_blank">Rules</a></li>
+								<li><a href="https://www.facebook.com" class="fa-facebook" title="Hints" target="_blank">Hints</a></li>
+							</ul>
+						</footer>
+					</section>
+					<footer id="footer">
+						<p><span style="opacity: 0.5;">Adapted from a template by HTML5Up</span></p>
+					</footer>
+			</div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title> OTH! </title>
-</head>
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
 
-<link rel="stylesheet" href="css/pirate.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-<center>
-<font size="6" style="arial" color="#ffffff">
-<br/><br/>
-Ahoy, Mateys!<br/>
-Welcome To The Online Treasure Hunt
-Crawl the web to find secret troves of knowledge, and unlock the next clue!
-Play Sherlock Holmes on the expanse of the Internet.<br/>
-Hosted By PESSE ACM Student Chapter<br/><br/> 
-</center>
-<font size="5" style="arial" color="#1E90FF">
-<b>Links :</b> <br/>
-<a href="rank.php">CLICK HERE</a> to view Real Time Scores.Open the score page on your browser to keep a track of the scores.<br/>
-<a href="rules.php">CLICK HERE</a> to view the Rules .<br/>
-<a href="respawn.php">Respawn</a> if you have already registered. You'll be redirected to the last played level<br/>
-Need any more help? Ask the volunteers around you!!
-<center>
-<font size="10" style="arial" color="#1E90FF">
+	</body>
 
-<form METHOD="post" ACTION="index.php">
-
-<table>
-<tr> <td> <font size="10" style="arial" color="#1E90FF"> USN : </font> </td> <td> <input type="text" name='usn'></input> </td> </tr> <br/>
-<tr> <td> <font size="10" style="arial" color="#1E90FF"> Name : </font> </td> <td> <input type="text" name='name'></input> </td> </tr> <br/>
-</table>
-
-<input TYPE="submit" VALUE="START">
-
-</form>
-
-</center>
-</font>
-</body>
 </html>
-<? ob_flush(); ?>

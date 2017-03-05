@@ -1,14 +1,35 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<title> Cheater cheater!</title>
-</head>
-<body>
-<link rel="stylesheet" href="css/pirate.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-<font size="10" style="arial">
-<center>
-<p> HEY!!!!  There are no shortcuts in our treasure hunt. :p <br/>
-Hit the back button on ur browser and try again!
-</p>
-</center>
-</font>
-</body>
-</html>
+<? ob_start(); session_start();?>
+<!DOCTYPE HTML>
+<? $level = "Over 9000"?>
+<?require('./includes/html1.php');?>
+						<header>
+							<h1>CHEATER!</h1>
+						</header>
+						
+						<hr />
+
+						<p>There are no shortcuts in our treasure hunt :p <br/>
+Hit the re-spawn button and try again!</p>
+<?require('./includes/html_incorrect.php');?>
+
+
+
+						<footer>
+							<ul class="icons">
+								<li><a href="respawn.php" class="fa-history" title="Respawn">RESPAWN</a></li>
+								<a href="respawn.php"><p>RE-SPAWN</p></a>
+							</ul>
+						</footer>
+
+						<hr />
+
+						<img src="images/cheat.gif" width="80%"/>
+
+						<hr />
+
+						<p>You are, however, allowed the use of time machines<br/>to seek answers from your future self</p>
+						
+
+<?require('./includes/html2.php');?>
+						
+<? ob_flush(); ?>

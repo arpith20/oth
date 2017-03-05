@@ -1,23 +1,17 @@
-ONLINE TREASURE HUNT ENGINE
+ONLINE TREASURE HUNT ENGINE v2
 ===========================
+This is an online treasure hunt engine. Players of the game are expected to decode hints to unlock the next level. Hints can be anywhere in the question page — be it form of text, images, audio, video, in the URL or even the source code!
 
-Please note:
+Notes:
 -----------
-To edit server/database details, modify config.php<br/>
-The files are named as follows:<br/>
-	<t/>If the file name is *.php, then * represents the answer of the previous level<br/>
-	<t/>First file is named start.php and is accessible even without registering (preview)<br/>
-respawn.php will take the user to the last played level. (this is useful in case of browser crash or connection loss)<br/>
-All images are saved in a folder named "img"<br/>
-<br/>
-Feel free to contribute to this project<br/>
-<br/>
+* The V2 of this engine was developed for <a href="http://events.csa.iisc.ac.in/openday2017/" target="_blank">IISc Openday 2017</a>. For the complete source which includes all levels used for the OpenDay 2017 event, <a href="http://events.csa.iisc.ac.in/openday2017/questfordnext/" target="_blank"> Quest for the Next</a>, see the iisc branch of this project.   
+
+* To edit server/database details, modify config.php
+   
+* <a href="http://events.csa.iisc.ac.in/openday2017/questfordnext/" target="_blank">Play Quest For the Next</a>
+
+Feel free to contribute to this project   
 Cheers!!
 
 ---
 <b>In Apache 2.4+, the use of short open tags (<? ?>) is disabled by default. To enable it, modify `/etc/php5/apache2/php.ini` and set `short_open_tag = On`. Then restart your server with `sudo service apache2 restart`</b>
-
-
-
-
-
