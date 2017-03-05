@@ -1,8 +1,8 @@
 <!--	Author: Arpith K
 				arpith.xyz
+		Date:	February 2017
 		Source: https://github.com/arpith20/oth
 -->
-
 <?php
 session_start();
 require_once("config.php");
@@ -95,12 +95,13 @@ if($usn!=NULL && $password != null)
 							<ul class="icons">
 								<li><a href="leaderboard.php" class="fa-child" title="Leaderboard" target="_blank">Leaderboard</a></li>
 								<li><a href="rules.php" class="fa-asterisk" title="Rules" target="_blank">Rules</a></li>
-								<li><a href="https://www.facebook.com" class="fa-facebook" title="Hints" target="_blank">Hints</a></li>
+								<li><a href="https://www.facebook.com/QuestForDNext" class="fa-facebook" title="Hints" target="_blank">Hints</a></li>
+								<li><a href="credits.php" class="fa-hand-spock-o" title="Credits" target="_blank">Credits</a></li>
 							</ul>
 						</footer>
 					</section>
 					<footer id="footer">
-						<p><span style="opacity: 0.5;">Adapted from a template by HTML5Up</span></p>
+						<p><span style="opacity: 0.1;">Login and then start searching for clues.</span></p>
 					</footer>
 			</div>
 
@@ -110,7 +111,27 @@ if($usn!=NULL && $password != null)
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-92167498-1', 'auto');
+			  ga('send', 'pageview');
+
+			</script>
 
 	</body>
 
+
+
+	<!--<style>
+	#fb
+	{
+		position: relative;
+		margin-left: -55%;
+		/*margin-top: 0%;*/
+	}
+	</style>-->
 </html>

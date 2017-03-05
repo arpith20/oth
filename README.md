@@ -13,5 +13,17 @@ Notes:
 Feel free to contribute to this project   
 Cheers!!
 
+Credits for Framing Questions:
+-------------------------
+<ul>
+<li>Abhinav Anand</li>
+<li>Amit Yadav</li>
+<li>Ankit Jauhari</li>
+<li>Arpith K Sharma</li>
+<li>Arun Joseph</li>
+<li>Dharmendra Kumar Singh</li>
+<li>Nikita Chopra</li>
+</ul>
+
 ---
 <b>In Apache 2.4+, the use of short open tags (<? ?>) is disabled by default. To enable it, modify `/etc/php5/apache2/php.ini` and set `short_open_tag = On`. Then restart your server with `sudo service apache2 restart`</b>

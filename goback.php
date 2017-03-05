@@ -18,8 +18,10 @@ Hit the <a href="respawn.php">RESPAWN</a> button if you don't own a DeLorean tim
 </footer>
 <?require('./includes/html_incorrect.php');?>
 <hr />
-<img src="images/delorean.png" width="80%"/>
+<img src="images/oops.jpg" width="80%"/>
 
 <?require('./includes/html2.php');?>
+
+<!--passwd: ilikecakes-->
 						
 <? ob_flush(); ?>

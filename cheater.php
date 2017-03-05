@@ -31,5 +31,7 @@ Hit the re-spawn button and try again!</p>
 						
 
 <?require('./includes/html2.php');?>
+
+<!-- https://futureboy.us/stegano/ -->
 						
 <? ob_flush(); ?>

@@ -32,6 +32,12 @@
 						levels will win the event. In the event of nobody completing all the levels, the highest level players<br/>
 						will win, breaking ties using level completion time as necessary.</p>
 
+						<h2><b>Contacts</b></h2>
+						<p>Ankit Jauhari (8105187756)<br/>
+						  Nikita Chopra (7376778125) <br/>
+						  or write us at <a href="mailto:questfordnextopendays@gmail.com" target="_top">questfordnextopendays@gmail.com</a>
+						</p>
+
 						<h2><b>Prizes</b></h2>
 						<p>Goodies worth ₹20,000 to be won!</p>
 						
@@ -44,7 +50,7 @@
 						<ol>
 						  <li>Online registration is mandatory.</li>
 						  <li>This is an individual event.</li>
-						  <li>Hints will be posted on the <a href="https://www.facebook.com/" title="facebook page" target="_blank" style = "color:blue;">facebook page</a>. Follow/Like it for updates.</li>
+						  <li>Hints will be posted on the <a href="https://www.facebook.com/QuestForDNext" title="facebook page" target="_blank" style = "color:blue;">facebook page</a>. Follow/Like it for updates.</li>
 						  <li>For claiming of prizes, participants should produce identity card of his/her educational institute.</li>
 						  <li>Pay attention, because everything is fair game.</li>
 						  <li>The decisions of the organizing team in case of any issues shall be final.</li>

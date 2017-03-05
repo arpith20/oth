@@ -20,7 +20,7 @@
 						</header>
 						
 						<hr />
-						<p>Refresh the page to update</p>
+						<p>Refresh the page to update<br>The game has ended! You can keep playing for fun!</p>
 						<?php
 							$sno=1;
 
@@ -43,7 +43,7 @@
 							</tr>";
 							while($row = mysql_fetch_array($result))
 							{
-								//for admin user to test the scripts and not show up on leader board
+								//for admin user to test the scripts
 								if(strcmp($row['usn'],"admin")==0)
 									continue;
 
@@ -51,7 +51,10 @@
 								echo "<td>" . $sno++ . "</td>";
 								echo "<td>" . $row['usn'] . "</td>";
 								echo "<td>" . $row['name'] . "</td>";
-								echo "<td> Over " . $row['level'] . "</td>";
+								if($row['level'] == 9000)
+									echo "<td> Over " . $row['level'] . "</td>";
+								else
+									echo "<td>" . $row['level'] . "</td>";
 								echo "<td>" . $row['time'] . "</td>";
 								echo "</tr>";
 							}
@@ -64,7 +67,7 @@
 					</section>
 
 					<footer id="footer">
-						<p><span style="opacity: 0.1;">If you ever feel useless, just remember that this is a text that no one can see</span></p>
+						<p><span style="opacity: 0.1;">If you ever feel useless, just remember that this is a text that no one can see.</span></p>
 					</footer>
 
 

@@ -9,11 +9,11 @@ require_once("config.php");
 //**************************************************************
 //You may modify these values
 //Directly modify the html (in this file) if you wish to make advanced changes
-$question = "Congratulations!!";	//question
-$correct="42";		//the correct answer
+$question = "Ask me anything!!";	//question
+$correct="duckduckgo::duck duck go";		//the correct answer
 
 //name of image to be displayed (please give a unpredictable random string as the name of the image. This is so that the player does not guess the name of images in other level)
-$image="img/done.jpg";		
+$image="img/pic.jpg";		
 
 //End Of You may modify these values
 //**************************************************************
@@ -29,19 +29,20 @@ require('./includes/check.php');
 	<h2 style="text-transform: none;"><? echo $question ?></h2>
 </header>
 
-<hr />
 
 <?require('./includes/html_incorrect.php'); //Display that the answer is incorrect?>
 
 <? //Image is placed here ?>
-<img src="<?echo $image?>" height="281" width="500"/>
+
+<img src="<?echo $image?>"/>
+
 
 <?require('./includes/html_form.php');?>
 
 <?require('./includes/bottomlinks.php');?>
 
 <footer id="footer">
-	<p><span style="opacity: 0.1;">A SECRET HINT</span></p>
+	<p><span style="opacity: 0.1;">If you ever feel useless, just remember that this is a text that no one can see.</span></p>
 </footer>
 
 </div>
@@ -53,6 +54,7 @@ require('./includes/check.php');
 		document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 	}
 </script>
+<?require('./includes/track.php');?>
 
 </body>
 </html>
