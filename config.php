@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect('localhost','othproduction', 'L6vKXCxyCMzqhZAA');
+$con = mysqli_connect('localhost','othproduction', 'oth123');
 //if connection fails
 if (!$con) 
 {
@@ -8,7 +8,7 @@ if (!$con)
 else 
 {
 	//select database
-	$db = mysql_select_db('othproduction', $con) or die("problem selecting database '$MYSQL[DATABASENAME]'");
+	$db = mysqli_select_db($con, 'othproduction') or die("problem selecting database '$MYSQL[DATABASENAME]'");
 }
 
 function clean($string) {

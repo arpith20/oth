@@ -57,15 +57,14 @@ if($name!=NULL && $usn!=NULL && $username_correct == 1 && $valid_mail == 1 && $p
 	//TODO: Hash password
 	$password = password_hash($password, PASSWORD_DEFAULT);
 	$sql="INSERT INTO sheet (usn,name,level,email,password,college,phone,id) VALUES('$usn','$name','$level','$email','$password','$college','$phone','$id')";
-	if (!mysql_query($sql,$con))
+	if (!mysqli_query($con,$sql))
 	{
 		$taken = 1;
-		mysql_close($con);
-		//die('Error: ' . mysql_error());
+		mysqli_close($con);
 	}else{
 		//setcookie("USN", $usn, time()+60*60*24*30);
 		//setcookie("NAME", $name, time()+60*60*24*30);
-		mysql_close($con);
+		mysqli_close($con);
 		$success=1;
 		//redirect('index.php');
 	}

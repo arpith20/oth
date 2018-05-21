@@ -14,9 +14,9 @@ $valid_pass = 0;
 
 if($usn!=NULL && $password != null)
 {
-	$data=mysql_query("SELECT password FROM sheet where usn='$usn'") 
-			or die(mysql_error());
-	$info = mysql_fetch_array( $data );
+	$data=mysqli_query($con,"SELECT password FROM sheet where usn='$usn'") 
+			or die(mysqli_error());
+	$info = mysqli_fetch_array( $data );
 	if(password_verify($password, $info[password])){
 		$valid_pass = 1;
 	}
@@ -25,9 +25,9 @@ if($usn!=NULL && $password != null)
 		session_start();
 		$_SESSION["USN"] = $usn;
 		$sql="update sheet set session='".session_id()."' where usn='$usn'";
-		if (!mysql_query($sql,$con))
+		if (!mysqli_query($con,$sql))
 	  	{
-			die('Error: ' . mysql_error());
+			die('Error: ' . mysqli_error());
 	  	}
 		redirect('respawn.php');
 	}
