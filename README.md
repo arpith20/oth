@@ -8,7 +8,7 @@ Notes:
 
 * To edit server/database details, modify config.php
    
-* <a href="http://events.csa.iisc.ac.in/openday2017/questfordnext/" target="_blank">Play Quest For the Next</a> (Mirror: <a href="http://oth.arpith.xyz/" target="_blank">oth.arpith.xyz/</a>)
+* <a href="http://events.csa.iisc.ac.in/openday2017/questfordnext/" target="_blank">Play Quest For the Next</a> (Mirror: <a href="http://oth.arpith.xyz/" target="_blank">oth.arpith.xyz</a>)
 
 Feel free to contribute to this project   
 Cheers!!
