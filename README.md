@@ -14,4 +14,4 @@ Feel free to contribute to this project
 Cheers!!
 
 ---
-<b>In Apache 2.4+, the use of short open tags (<? ?>) is disabled by default. To enable it, modify `/etc/php5/apache2/php.ini` and set `short_open_tag = On`. Then restart your server with `sudo service apache2 restart`</b>
+<b>In Apache 2.4+, the use of short open tags (<? ?>) is disabled by default. To enable it, modify `/etc/php/7.0/apache2/php.ini` and set `short_open_tag = On`. Then restart your server with `sudo service apache2 restart`</b>
