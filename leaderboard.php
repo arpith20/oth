@@ -28,9 +28,9 @@
 
 
 							$query="select * from sheet order by level desc,time asc";
-							if (!($result=mysql_query($query,$con)))
+							if (!($result=mysqli_query($con, $query)))
 							{
-								die('Error: ' . mysql_error());  	
+								die('Error: ' . mysqli_error());  	
 							}
 							echo "<br/><br/>";
 							echo "<table border='1'>
@@ -41,7 +41,7 @@
 							<th> Levels completed </th>
 							<th> Time </th>
 							</tr>";
-							while($row = mysql_fetch_array($result))
+							while($row = mysqli_fetch_array($result))
 							{
 								//for admin user to test the scripts and not show up on leader board
 								if(strcmp($row['usn'],"admin")==0)
@@ -51,13 +51,13 @@
 								echo "<td>" . $sno++ . "</td>";
 								echo "<td>" . $row['usn'] . "</td>";
 								echo "<td>" . $row['name'] . "</td>";
-								echo "<td> Over " . $row['level'] . "</td>";
+								echo "<td>" . $row['level'] . "</td>";
 								echo "<td>" . $row['time'] . "</td>";
 								echo "</tr>";
 							}
 
 							echo "</table>"; 
-							mysql_close($con);
+							mysqli_close($con);
 						?>
 
 						
